@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/1eeing/my_webpack_demo.git"
   },
-  "author": "",
+  "author": "leeing",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/1eeing/my_webpack_demo/issues"
@@ -20,6 +21,16 @@
     "mobx": "^5.5.2",
     "mobx-react": "^5.3.6",
     "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2"
   }
 }
