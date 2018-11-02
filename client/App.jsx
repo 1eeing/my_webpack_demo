@@ -4,7 +4,7 @@ class App extends Component {
     render () {
         console.log('start');
         return (
-            <div>hello world</div>
+            <div>tokyo hot !</div>
         );
     }
 }

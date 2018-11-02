@@ -1,0 +1,47 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'dev:client' ]
+2 info using npm@3.10.9
+3 info using node@v10.9.0
+4 verbose run-script [ 'predev:client', 'dev:client', 'postdev:client' ]
+5 info lifecycle my_webpack_demo@1.0.0~predev:client: my_webpack_demo@1.0.0
+6 silly lifecycle my_webpack_demo@1.0.0~predev:client: no script for predev:client, continuing
+7 info lifecycle my_webpack_demo@1.0.0~dev:client: my_webpack_demo@1.0.0
+8 verbose lifecycle my_webpack_demo@1.0.0~dev:client: unsafe-perm in lifecycle true
+9 verbose lifecycle my_webpack_demo@1.0.0~dev:client: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/admin/Documents/my_webpack_demo/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+10 verbose lifecycle my_webpack_demo@1.0.0~dev:client: CWD: /Users/admin/Documents/my_webpack_demo
+11 silly lifecycle my_webpack_demo@1.0.0~dev:client: Args: [ '-c',
+11 silly lifecycle   'cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js' ]
+12 silly lifecycle my_webpack_demo@1.0.0~dev:client: Returned: code: 1  signal: null
+13 info lifecycle my_webpack_demo@1.0.0~dev:client: Failed to exec dev:client script
+14 verbose stack Error: my_webpack_demo@1.0.0 dev:client: `cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+14 verbose stack     at EventEmitter.emit (events.js:182:13)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at ChildProcess.emit (events.js:182:13)
+14 verbose stack     at maybeClose (internal/child_process.js:961:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:250:5)
+15 verbose pkgid my_webpack_demo@1.0.0
+16 verbose cwd /Users/admin/Documents/my_webpack_demo
+17 error Darwin 17.5.0
+18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "dev:client"
+19 error node v10.9.0
+20 error npm  v3.10.9
+21 error code ELIFECYCLE
+22 error my_webpack_demo@1.0.0 dev:client: `cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js`
+22 error Exit status 1
+23 error Failed at the my_webpack_demo@1.0.0 dev:client script 'cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the my_webpack_demo package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs my_webpack_demo
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls my_webpack_demo
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
