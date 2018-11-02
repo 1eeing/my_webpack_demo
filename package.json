@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/1eeing/my_webpack_demo#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "express": "^4.16.4",
     "mobx": "^5.5.2",
     "mobx-react": "^5.3.6",
@@ -35,6 +36,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
     "cross-env": "^5.2.0",
+    "eslint": "^5.8.0",
     "html-webpack-plugin": "^3.2.0",
     "react-hot-loader": "^4.3.12",
     "rimraf": "^2.6.2",
