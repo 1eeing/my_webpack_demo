@@ -4,7 +4,7 @@ const webpack = require('webpack');
 
 const isDev = process.env.NODE_ENV === 'development';
 
-const config = {
+let config = {
     entry: {
         app: path.join(__dirname, '../client/app.js')
     },
