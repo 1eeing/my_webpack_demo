@@ -10,7 +10,7 @@ const serverConfig = require('../../build/webpack.config.serve');
 
 const getTemplate = () => {
     return new Promise((resolve, reject) => {
-        axios.get('http://localhost:3333/public/index.html')
+        axios.get('http://localhost:8888/public/index.html')
             .then(res => {
                 resolve(res.data);
             })
@@ -43,9 +43,9 @@ serverCompiler.watch({}, (err, stats) => {
 
 module.exports = (app) => {
 
-    // app.use('/public', proxy({
-    //     target: 'http://localhost:8888'
-    // }));
+    app.use('/public', proxy({
+        target: 'http://localhost:8888'
+    }));
 
     app.get('*', (req, res) => {
         getTemplate().then(temp => {
