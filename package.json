@@ -7,11 +7,10 @@
     "build:client": "webpack --config build/webpack.config.client.js",
     "build:server": "webpack --config build/webpack.config.serve.js",
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
-    "dev:server": "cross-env NODE_ENV=development node server/server.js",
+    "dev:server": "cross-env NODE_ENV=development supervisor server/server.js",
     "clear": "rimraf dist",
-	"build": "npm run clear && npm run build:client && npm run build:server",
-	"lint": "eslint --ext .js --ext .jsx client/",
-	"precommit": "npm run lint"
+    "build": "npm run clear && npm run build:client && npm run build:server",
+    "lint": "eslint --ext .js --ext .jsx client/"
   },
   "repository": {
     "type": "git",
@@ -30,7 +29,8 @@
     "mobx-react": "^5.3.6",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -55,8 +55,10 @@
     "memory-fs": "^0.4.1",
     "react-hot-loader": "^4.3.12",
     "rimraf": "^2.6.2",
+    "supervisor": "^0.12.0",
     "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10"
+    "webpack-dev-server": "^3.1.10",
+    "webpack-merge": "^4.1.4"
   }
 }

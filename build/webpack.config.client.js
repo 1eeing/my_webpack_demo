@@ -1,45 +1,18 @@
 const path = require('path');
 const HTMLPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const baseConfig = require('./webpack.config.base');
+const webpackMerge = require('webpack-merge');
 
 const isDev = process.env.NODE_ENV === 'development';
 
-let config = {
+let config = webpackMerge(baseConfig, {
     entry: {
         app: path.join(__dirname, '../client/app.js')
     },
 
     output: {
-        filename: '[name].[hash].js',
-        path: path.join(__dirname, '../dist'),
-        publicPath: '/public/'
-    },
-
-    module: {
-        rules: [
-            {
-                enforce: 'pre',
-                test: /\.(js|jsx)$/,
-                loader: 'eslint-loader',
-                exclude: [
-                    path.join(__dirname, '../node_modules')
-                ]
-            },
-            {
-                test: /\.jsx$/,
-                loader: 'babel-loader',
-                exclude: [
-                    path.join(__dirname, '../node_modules')
-                ]
-            },
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: [
-                    path.join(__dirname, '../node_modules')
-                ]
-            },
-        ]
+        filename: '[name].[hash].js'
     },
 
     plugins: [
@@ -47,7 +20,7 @@ let config = {
             template: path.join(__dirname, '../client/template.html')
         })
     ]
-};
+});
 
 if(isDev){
     config.devServer = {

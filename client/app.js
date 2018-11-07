@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { AppContainer } from 'react-hot-loader'; // eslint-disable-line
-import App from './App.jsx';
+import App from './views/App';
 
 const root = document.getElementById('root');
 const render = (Component) => {
