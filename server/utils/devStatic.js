@@ -37,7 +37,7 @@ serverCompiler.watch({}, (err, stats) => {
 
     const bundle = mfs.readFileSync(bundlePath, 'utf8');
     const m = new Module();
-    m._compile(bundle, 'server-entry.js');
+    m._compile(bundle, 'serverEntry.js');
     serverBoundle = m.exports.default;
 }); 
 

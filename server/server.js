@@ -17,7 +17,7 @@ if(!isDev) {
         res.send(template.replace('<!-- app -->', appString));
     });
 } else {
-    const devStatic = require('./util/devStatic');
+    const devStatic = require('./utils/devStatic');
     devStatic(app);
 }
 

@@ -1,22 +1,23 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDom from 'react-dom';
+import { AppContainer } from 'react-hot-loader'; // eslint-disable-line
 import App from './App.jsx';
-import { AppContainer } from 'react-hot-loader';
 
 const root = document.getElementById('root');
-const _render = Component => {
-    render(
-        <AppContainer>
-            <Component />
-        </AppContainer>,
-        root
-    )
-}
-_render(App);
+const render = (Component) => {
+  ReactDom.render(
+    <AppContainer>
+        <Component />
+    </AppContainer>,
+    root
+  );
+};
 
-if(module.hot){
+render(App);
+
+if (module.hot) {
     module.hot.accept('./App.jsx', () => {
-        const NextApp = require('./App.jsx').default;
-        _render(NextApp);
+        const NextApp = require('./App.jsx').default; // eslint-disable-line
+        render(NextApp);
     });
 }
