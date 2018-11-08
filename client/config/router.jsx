@@ -1,13 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import TopicList from '../views/topicList';
-import TopicDetail from '../views/topicDetail';
+import { Route } from 'react-router-dom';
+import TopicList from 'VIEW/TopicList';
+import TopicDetail from 'VIEW/TopicDetail';
 
-const Router = () => {
-	<BrowserRouter>
-		<Route path="/list" component={TopicList} />
-		<Route path="/detail" component={TopicDetail} />
-	</BrowserRouter>
-};
+const Routes = () => [
+	<Route path="/" exact component={TopicList} />,
+	<Route path="/detail" component={TopicDetail} />
+];
 
-export default Router;
+export default Routes;
