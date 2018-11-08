@@ -11,11 +11,11 @@ class TopicDetail extends Component {
 	}
 
 	changePrice(e) {
-		this.props.store.price = e.target.value;
+		this.props.store.changePrice(e.target.value);
 	}
 
 	changeAmount(e) {
-		this.props.store.amount = e.target.value;
+		this.props.store.changeAmount(e.target.value);
 	}
 
 	render() {

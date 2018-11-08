@@ -1,4 +1,4 @@
-import { observable, computed } from 'mobx';
+import { observable, computed, action } from 'mobx';
 
 class AppState {
 	@observable price = 0;
@@ -7,6 +7,14 @@ class AppState {
 
     @computed get total() {
         return this.price * this.amount;
+    }
+
+    @action changePrice(val) {
+        this.price = val;
+    }
+
+    @action changeAmount(val) {
+        this.amount = val;
     }
 }
 
