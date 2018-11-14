@@ -23,6 +23,9 @@ app.use(session({
 
 app.use(favicon(path.join(__dirname, '../favicon.ico')));
 
+app.use('/api/user', require('./utils/loginIn'));
+app.use('/api', require('./utils/proxy'));
+
 if(!isDev) {
     const serverEntry = require('../dist/serverEntry').default;
     const template = fs.readFileSync(path.join(__dirname, '../client/template.html'), 'utf8');
