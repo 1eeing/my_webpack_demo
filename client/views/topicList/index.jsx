@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
 @inject('store') @observer
 class TopicList extends Component {
@@ -20,7 +21,11 @@ class TopicList extends Component {
 	render() {
 		return (
 			<div>
-				this is TopicList
+				<Helmet>
+					<title>this is topicList</title>
+					<meta name="description" content="this is a description" />
+				</Helmet>
+				this is TopicList.Haha
 				<span>{this.props.store.count}</span>
 			</div>
 		);

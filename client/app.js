@@ -25,8 +25,8 @@ const render = (Component) => {
 render(App);
 
 if (module.hot) {
-    module.hot.accept('VIEW/App', () => {
-        const NextApp = require('VIEW/App').default; // eslint-disable-line
+    module.hot.accept('./views/App', () => {
+        const NextApp = require('./views/App').default; // eslint-disable-line
         render(NextApp);
     });
 }

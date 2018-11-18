@@ -6,8 +6,8 @@ const serialize = require('serialize-javascript');
 const MemoryFs = require('memory-fs');
 const ejs = require('ejs');
 const bootstrapper = require('react-async-bootstrapper');
-
 const ReactDomServer = require('react-dom/server');
+const Helmet = require('react-helmet').default;
 
 const serverConfig = require('../../build/webpack.config.serve');
 
@@ -21,7 +21,20 @@ const getTemplate = () => {
     });
 };
 
-const Module = module.constructor;
+const NativeModule = require('module');
+const vm = require('vm');
+
+const getModuleFromString = (bundle, filename) => {
+    const m = {exports: {}};
+    const wrapper = NativeModule.wrap(bundle);
+    const script = new vm.Script(wrapper, {
+        filename,
+        displayErrors: true
+    });
+    const result = script.runInThisContext();
+    result.call(m.exports, m.exports, require, m);
+    return m;
+};
 
 const mfs = new MemoryFs;
 const serverCompiler = webpack(serverConfig);
@@ -39,8 +52,7 @@ serverCompiler.watch({}, (err, stats) => {
     );
 
     const bundle = mfs.readFileSync(bundlePath, 'utf8');
-    const m = new Module();
-    m._compile(bundle, 'serverEntry.js');
+    const m = getModuleFromString(bundle, 'serverEntry.js');
 	serverBoundle = m.exports.default;
 	createStoreMap = m.exports.createStoreMap;
 });
@@ -69,13 +81,19 @@ module.exports = (app) => {
 					res.status(302).setHeader('Location', routerContext.url);
 					res.end();
 					return;
-				}
+                }
+                
 				const state = getStoreState(stores);
-				const content = ReactDomServer.renderToString(params);
+                const content = ReactDomServer.renderToString(params);
+                const helmet = Helmet.renderStatic();
 
 				const html = ejs.render(temp, {
 					appString: content,
-					initialState: serialize(state)
+                    initialState: serialize(state),
+                    meta: helmet.meta.toString(),
+                    title: helmet.title.toString(),
+                    style: helmet.style.toString(),
+                    link: helmet.link.toString()
 				});
 
 				res.send(html);
