@@ -44,6 +44,29 @@ if(isDev){
         }
     };
     config.plugins.push(new webpack.HotModuleReplacementPlugin());
+}else{
+	config.entry = {
+		app: path.join(__dirname, '../client/app.js')
+	};
+	config.output.filename = '[name].[chunkhash].js';
+	config.optimization = {
+		runtimeChunk: {
+			name: 'manifest'
+		},
+		minimize: true,
+		splitChunks: {
+			cacheGroups: {
+				vendor: {
+					test: /[\\/]node_modules[\\/]/,
+					name: 'vendor',
+					chunks: 'all'
+				}
+			}
+		}
+	};
+	config.plugins.push(
+		new webpack.HashedModuleIdsPlugin()
+	);
 }
 
 module.exports = config;

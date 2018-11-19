@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import print from './print';
+import test from './test';
 
 @inject('store') @observer
 class TopicList extends Component {
 	componentDidMount() {
 		// todo
+		print();
+		test();
 	}
 
 	bootstrap() {
