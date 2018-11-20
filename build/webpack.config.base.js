@@ -6,9 +6,6 @@ module.exports = {
         publicPath: '/public/'
 	},
 	resolve: {
-		alias: {
-			VIEW: path.resolve(__dirname, '../client/views/')
-		},
 		extensions: ['.js', '.jsx', '.json']
 	},
 	module: {
