@@ -45,6 +45,6 @@ app.use(function(err, req, res, next) {
 });
 
 const HOST = process.env.HOST || '0.0.0.0';
-const PORT = process.env.PORT || '3333'
+const PORT = process.env.PORT || '3333';
 
-app.listen(PORT, HOST, () => console.log('server is listening on 3333'));
+app.listen(PORT, HOST, () => console.log(`server is listening on ${HOST}:${PORT}`));
