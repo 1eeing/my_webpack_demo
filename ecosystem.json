@@ -15,7 +15,7 @@
 			"host": "192.168.52.41",
 			"repo": "https://github.com/1eeing/my_webpack_demo.git",
 			"ref": "origin/master",
-			"path": "/home/xiaobai/project",
+			"path": "/home/xiaobai",
 			"post-deploy": "npm install && npm run build && pm2 startOrRestart ecosystem.json --env production"
 		}
 	}
