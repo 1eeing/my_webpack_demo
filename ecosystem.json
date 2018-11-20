@@ -1,0 +1,22 @@
+{
+	"app": [
+		{
+			"name": "mwd",
+			"script": "./server/server.js",
+			"env_production": {
+				"NODE_ENV": "production",
+				"HOST": "localhost"
+			}
+		}
+	],
+	"deploy": {
+		"production": {
+			"user": "xiaobai",
+			"host": "192.168.52.41",
+			"repo": "https://github.com/1eeing/my_webpack_demo.git",
+			"ref": "origin/master",
+			"path": "/home/xiaobai/project",
+			"post-deploy": "npm install && npm run build && pm2 startOrRestart ecosystem.json --env production"
+		}
+	}
+}
