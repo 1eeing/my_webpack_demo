@@ -3,7 +3,7 @@ import ReactDom from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'mobx-react';
 import { AppContainer } from 'react-hot-loader'; // eslint-disable-line
-import App from './views/App';
+import App from 'VIEW/App';
 import AppState from './store/store';
 
 const initialState = window.__INITIAL__STATE__ || {}; // eslint-disable-line

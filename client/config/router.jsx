@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import TopicList from '../views/TopicList';
-import TopicDetail from '../views/TopicDetail';
-import TestApi from '../views/test/api-test';
+import TopicList from 'VIEW/TopicList';
+import TopicDetail from 'VIEW/TopicDetail';
+import TestApi from 'VIEW/test/api-test';
 
 const Routes = () => [
 	<Route path="/" render={() => <Redirect to="/list" />} exact="true" />,
