@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import TopicList from 'VIEW/TopicList/index';
-import TopicDetail from 'VIEW/TopicDetail/index';
+import TopicList from 'VIEW/TopicList';
+import TopicDetail from 'VIEW/TopicDetail';
 import TestApi from 'VIEW/test/api-test';
 
 const Routes = () => [
