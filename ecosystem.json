@@ -12,10 +12,10 @@
 	"deploy": {
 		"production": {
 			"user": "xiaobai",
-			"host": "192.168.52.41",
-			"repo": "https://github.com/1eeing/my_webpack_demo.git",
+			"host": "47.106.191.109",
+			"repo": "git@github.com:1eeing/my_webpack_demo.git",
 			"ref": "origin/master",
-			"path": "/home/xiaobai",
+			"path": "/home/leeing/projects",
 			"post-deploy": "npm install && npm run build && pm2 startOrRestart ecosystem.json --env production"
 		}
 	}
