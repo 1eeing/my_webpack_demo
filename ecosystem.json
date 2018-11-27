@@ -16,7 +16,7 @@
 			"repo": "git@github.com:1eeing/my_webpack_demo.git",
 			"ref": "origin/master",
 			"path": "/home/leeing/projects",
-			"post-deploy": "npm install && npm run build && pm2 startOrRestart ecosystem.json --env production"
+			"post-deploy": "git pull origin master && npm install && npm run build && pm2 startOrRestart ecosystem.json --env production"
 		}
 	}
 }
