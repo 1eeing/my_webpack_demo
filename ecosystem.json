@@ -11,7 +11,7 @@
 	],
 	"deploy": {
 		"production": {
-			"user": "xiaobai",
+			"user": "leeing",
 			"host": "47.106.191.109",
 			"repo": "git@github.com:1eeing/my_webpack_demo.git",
 			"ref": "origin/master",
